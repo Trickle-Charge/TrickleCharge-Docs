@@ -29,7 +29,8 @@ jobs:
 
       - name: Copy Infra Docs into Hub Root
         run: |
-          cp -r infra-temp/docs/* hub/docs/
+          mkdir -p hub/docs
+          cp -r infra-temp/docs/. hub/docs/
           rm -rf infra-temp
 
       - name: Checkout Unity Packages Docs
