@@ -1,0 +1,42 @@
+site_name: TrickleCharge Documentation
+site_description: Centralized documentation portal for TrickleCharge packages and infrastructure.
+site_url: https://trickle-charge.github.io/TrickleCharge-Docs/
+
+theme:
+  name: material
+  palette:
+    scheme: slate # Dark mode
+    primary: indigo
+    accent: blue
+  features:
+    - navigation.indexes
+    - navigation.sections
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+
+nav:
+  - Home: README.md
+  - Package Registry: registry/verdaccio.md
+  - CI/CD Pipelines:
+      - Overview: cicd/README.md
+      - Integration Guide: cicd/integrations/upm-integration-guide.md
+      - Reusable Workflows: cicd/workflows/publish-upm-packages.md
+  - Unity Packages:
+      - Overview: packages-unity/README.md
+      - Core Art: packages-unity/Packages/com.tricklecharge.unity.art.core/Documentation~/index.md
+      - Dev Art: packages-unity/Packages/com.tricklecharge.unity.art.devart/Documentation~/index.md
+      - Attributes: packages-unity/Packages/com.tricklecharge.unity.attributes/Documentation~/index.md
+      - DingOS: packages-unity/Packages/com.tricklecharge.unity.dingos/Documentation~/index.md
+      - Drone: packages-unity/Packages/com.tricklecharge.unity.drone/Documentation~/index.md
+      - Math: packages-unity/Packages/com.tricklecharge.unity.math/Documentation~/index.md
+      - Physics: packages-unity/Packages/com.tricklecharge.unity.physics/Documentation~/index.md
+      - Vehicles: packages-unity/Packages/com.tricklecharge.unity.vehicles/Documentation~/index.md

@@ -1,0 +1,52 @@
+name: Build and Deploy Documentation
+
+on:
+  push:
+    branches: [ main ]
+  repository_dispatch:
+    types: [ rebuild-docs ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Docs Hub
+        uses: actions/checkout@v4
+        with:
+          path: hub
+
+      - name: Checkout Infra Docs
+        uses: actions/checkout@v4
+        with:
+          repository: Trickle-Charge/TrickleCharge-Infra
+          path: infra-temp
+          sparse-checkout: |
+            docs
+
+      - name: Copy Infra Docs into Hub Root
+        run: |
+          cp -r infra-temp/docs/* hub/docs/
+          rm -rf infra-temp
+
+      - name: Checkout Unity Packages Docs
+        uses: actions/checkout@v4
+        with:
+          repository: Trickle-Charge/packages-unity
+          path: hub/docs/packages-unity
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install MkDocs Material
+        run: pip install mkdocs-material
+
+      - name: Build and Deploy to GitHub Pages
+        run: |
+          cd hub
+          mkdocs gh-deploy --force
