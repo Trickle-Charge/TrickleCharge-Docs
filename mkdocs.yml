@@ -26,10 +26,10 @@ markdown_extensions:
 nav:
   - Home: README.md
   - Package Registry: registry/verdaccio.md
-  - CI/CD Pipelines:
-      - Overview: cicd/README.md
-      - Integration Guide: cicd/integrations/upm-integration-guide.md
-      - Reusable Workflows: cicd/workflows/publish-upm-packages.md
+  - Infrastructure:
+      - Overview: infra/README.md
+      - Package Registry: infra/registry/verdaccio.md
+      - CI/CD Pipelines: infra/cicd/README.md
   - Unity Packages:
       - Overview: packages-unity/README.md
       - Core Art: packages-unity/Packages/com.tricklecharge.unity.art.core/Documentation~/index.md
