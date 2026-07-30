@@ -1,6 +1,6 @@
 site_name: TrickleCharge Documentation
 site_description: Centralized documentation portal for TrickleCharge packages and infrastructure.
-site_url: https://trickle-charge.github.io/TrickleCharge-Docs/
+site_url: https://docs.tricklecharge.dev/
 
 theme:
   name: material
