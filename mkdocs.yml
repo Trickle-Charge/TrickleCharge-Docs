@@ -29,6 +29,8 @@ nav:
       - Overview: infra/README.md
       - Package Registry: infra/registry/verdaccio.md
       - CI/CD Pipelines: infra/cicd/README.md
+  - DingOS:
+      - Overview: dingos/Documentation~/index.md
   - Unity Packages:
       - Overview: packages-unity/README.md
       - Core Art: packages-unity/Packages/com.tricklecharge.unity.art.core/Documentation~/index.md

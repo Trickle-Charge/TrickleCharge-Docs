@@ -38,6 +38,12 @@ jobs:
         with:
           repository: Trickle-Charge/packages-unity
           path: hub/docs/packages-unity
+          
+      - name: Checkout DingOS Docs
+        uses: actions/checkout@v4
+        with:
+          repository: Trickle-Charge/DingOS
+          path: hub/docs/dingos
 
       - name: Setup Python
         uses: actions/setup-python@v5
