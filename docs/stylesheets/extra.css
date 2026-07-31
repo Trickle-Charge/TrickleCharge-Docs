@@ -11,15 +11,15 @@
     --md-typeset-a-color:         var(--tc-accent-color);
 }
 
-/* Base link styles with smooth glow transition */
+/* Base link state */
 .md-typeset a {
     color: var(--tc-accent-color) !important;
-    filter: drop-shadow(0 0 0px rgba(51, 255, 0, 0));
-    transition: color 0.5s ease-out, filter 0.5s ease-out !important;
+    filter: var(--tc-glow-off);
+    transition: var(--tc-glow-transition);
 }
 
-/* Hover state using the hover token */
+/* Hover glow state */
 .md-typeset a:hover {
     color: var(--tc-accent-hover) !important;
-    filter: drop-shadow(0 0 6px rgba(51, 255, 0, 0.65));
+    filter: var(--tc-glow-on);
 }
