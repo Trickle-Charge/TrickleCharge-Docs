@@ -18,6 +18,7 @@ theme:
     - content.code.copy
 
 extra_css:
+  - assets/style/brand-vars.css
   - stylesheets/extra.css
 
 markdown_extensions:

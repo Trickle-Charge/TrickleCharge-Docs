@@ -1,6 +1,3 @@
-/* Import the centralized brand CSS copied during workflow run */
-@import "../assets/style/brand-vars.css";
-
 /* Map central brand variables to Material theme variables */
 [data-md-color-scheme="slate"] {
     --md-primary-fg-color:        var(--tc-bg-color);
@@ -24,7 +21,7 @@
 .md-typeset a,
 .tc-glow {
     filter: var(--tc-glow-off);
-    transition: var(--tc-glow-transition);
+    transition: var(--tc-glow-transition) !important;
 }
 
 .md-typeset a:hover,
