@@ -5,6 +5,7 @@ site_url: https://docs.tricklecharge.dev/
 theme:
   name: material
   favicon: assets/favicon/favicon.ico
+  logo: assets/favicon/favicon.svg
   palette:
     scheme: slate # Dark mode
     primary: custom
