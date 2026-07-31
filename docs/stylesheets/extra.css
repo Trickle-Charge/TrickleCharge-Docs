@@ -1,21 +1,25 @@
-/* Override variables for the Slate dark theme */
-[data-md-color-scheme="slate"] {
-    --md-primary-fg-color:        #191919;
-    --md-primary-fg-color--light: #2a2a2a;
-    --md-primary-fg-color--dark:  #0f0f0f;
+/* Import the centralized brand CSS copied during workflow run */
+@import "../assets/style/brand-vars.css";
 
-    --md-accent-fg-color:         #33FF00;
-    --md-typeset-a-color:         #33FF00;
+/* Map central brand variables to Material theme variables */
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color:        var(--tc-bg-color);
+    --md-primary-fg-color--light: var(--tc-bg-light);
+    --md-primary-fg-color--dark:  var(--tc-bg-dark);
+
+    --md-accent-fg-color:         var(--tc-accent-color);
+    --md-typeset-a-color:         var(--tc-accent-color);
 }
 
+/* Base link styles with smooth glow transition */
 .md-typeset a {
-    color: #33FF00 !important;
+    color: var(--tc-accent-color) !important;
     filter: drop-shadow(0 0 0px rgba(51, 255, 0, 0));
     transition: color 0.5s ease-out, filter 0.5s ease-out !important;
 }
 
-/* Hover state - smooth bloom */
+/* Hover state using the hover token */
 .md-typeset a:hover {
-    color: #66FF33 !important;
+    color: var(--tc-accent-hover) !important;
     filter: drop-shadow(0 0 6px rgba(51, 255, 0, 0.65));
 }
