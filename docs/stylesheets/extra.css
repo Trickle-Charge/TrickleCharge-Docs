@@ -8,11 +8,14 @@
     --md-typeset-a-color:         #33FF00;
 }
 
-/* Directly target body/content links for guaranteed override */
 .md-typeset a {
     color: #33FF00 !important;
+    filter: drop-shadow(0 0 0px rgba(51, 255, 0, 0));
+    transition: color 0.5s ease-out, filter 0.5s ease-out !important;
 }
 
+/* Hover state - smooth bloom */
 .md-typeset a:hover {
     color: #66FF33 !important;
+    filter: drop-shadow(0 0 6px rgba(51, 255, 0, 0.65));
 }
