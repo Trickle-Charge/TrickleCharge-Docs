@@ -11,15 +11,23 @@
     --md-typeset-a-color:         var(--tc-accent-color);
 }
 
-/* Base link state */
+/* Set link colors */
 .md-typeset a {
     color: var(--tc-accent-color) !important;
+}
+
+.md-typeset a:hover {
+    color: var(--tc-accent-hover) !important;
+}
+
+/* Share the glow effect between standard links and the .tc-glow class */
+.md-typeset a,
+.tc-glow {
     filter: var(--tc-glow-off);
     transition: var(--tc-glow-transition);
 }
 
-/* Hover glow state */
-.md-typeset a:hover {
-    color: var(--tc-accent-hover) !important;
+.md-typeset a:hover,
+.tc-glow:hover {
     filter: var(--tc-glow-on);
 }
