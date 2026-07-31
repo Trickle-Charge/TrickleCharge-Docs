@@ -42,13 +42,30 @@ nav:
   - DingOS:
       - Overview: dingos/Documentation~/index.md
       - Custom Implementations: dingos/Documentation~/custom-implementations.md
+      - Script Reference: dingos/Documentation~/ScriptReference/index.md
   - Unity Packages:
       - Overview: packages-unity/README.md
-      - Core Art: packages-unity/Packages/com.tricklecharge.unity.art.core/Documentation~/index.md
-      - Dev Art: packages-unity/Packages/com.tricklecharge.unity.art.devart/Documentation~/index.md
-      - Attributes: packages-unity/Packages/com.tricklecharge.unity.attributes/Documentation~/index.md
-      - DingOS: packages-unity/Packages/com.tricklecharge.unity.dingos/Documentation~/index.md
-      - Drone: packages-unity/Packages/com.tricklecharge.unity.drone/Documentation~/index.md
-      - Math: packages-unity/Packages/com.tricklecharge.unity.math/Documentation~/index.md
-      - Physics: packages-unity/Packages/com.tricklecharge.unity.physics/Documentation~/index.md
-      - Vehicles: packages-unity/Packages/com.tricklecharge.unity.vehicles/Documentation~/index.md
+      - Core Art:
+          - Overview: packages-unity/Packages/com.tricklecharge.unity.art.core/Documentation~/index.md
+          - Script Reference: packages-unity/Packages/com.tricklecharge.unity.art.core/Documentation~/ScriptReference/index.md
+      - Dev Art:
+          - Overview: packages-unity/Packages/com.tricklecharge.unity.art.devart/Documentation~/index.md
+          - Script Reference: packages-unity/Packages/com.tricklecharge.unity.art.devart/Documentation~/ScriptReference/index.md
+      - Attributes:
+          - Overview: packages-unity/Packages/com.tricklecharge.unity.attributes/Documentation~/index.md
+          - Script Reference: packages-unity/Packages/com.tricklecharge.unity.attributes/Documentation~/ScriptReference/index.md
+      - DingOS:
+          - Overview: packages-unity/Packages/com.tricklecharge.unity.dingos/Documentation~/index.md
+          - Script Reference: packages-unity/Packages/com.tricklecharge.unity.dingos/Documentation~/ScriptReference/index.md
+      - Drone:
+          - Overview: packages-unity/Packages/com.tricklecharge.unity.drone/Documentation~/index.md
+          - Script Reference: packages-unity/Packages/com.tricklecharge.unity.drone/Documentation~/ScriptReference/index.md
+      - Math:
+          - Overview: packages-unity/Packages/com.tricklecharge.unity.math/Documentation~/index.md
+          - Script Reference: packages-unity/Packages/com.tricklecharge.unity.math/Documentation~/ScriptReference/index.md
+      - Physics:
+          - Overview: packages-unity/Packages/com.tricklecharge.unity.physics/Documentation~/index.md
+          - Script Reference: packages-unity/Packages/com.tricklecharge.unity.physics/Documentation~/ScriptReference/index.md
+      - Vehicles:
+          - Overview: packages-unity/Packages/com.tricklecharge.unity.vehicles/Documentation~/index.md
+          - Script Reference: packages-unity/Packages/com.tricklecharge.unity.vehicles/Documentation~/ScriptReference/index.md

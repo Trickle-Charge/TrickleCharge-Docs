@@ -33,19 +33,19 @@ jobs:
           cp -r assets-temp/assets/. hub/docs/assets/
           rm -rf assets-temp
 
-      - name: Checkout Infra Docs
+      - name: Checkout Infra Docs & Actions
         uses: actions/checkout@v4
         with:
           repository: Trickle-Charge/TrickleCharge-Infra
           path: infra-temp
           sparse-checkout: |
             docs
+            .github/actions
 
       - name: Copy Infra Docs into Hub Root
         run: |
           mkdir -p hub/docs/infra
           cp -r infra-temp/docs/. hub/docs/infra/
-          rm -rf infra-temp
 
       - name: Checkout Unity Packages Docs
         uses: actions/checkout@v4
@@ -58,6 +58,16 @@ jobs:
         with:
           repository: Trickle-Charge/DingOS
           path: hub/docs/dingos
+
+      - name: Generate Script Reference Docs
+        uses: ./infra-temp/.github/actions/generate-script-docs
+        with:
+          targets: |
+            hub/docs/packages-unity/Packages/*
+            hub/docs/dingos
+
+      - name: Clean up temporary Infra checkout
+        run: rm -rf infra-temp
 
       - name: Setup Python
         uses: actions/setup-python@v5
