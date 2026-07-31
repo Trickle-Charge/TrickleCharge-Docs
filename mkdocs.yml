@@ -13,9 +13,14 @@ theme:
   features:
     - navigation.indexes
     - navigation.sections
+    - navigation.expand
     - search.suggest
     - search.highlight
     - content.code.copy
+
+plugins:
+  - search
+  - awesome-pages
 
 extra_css:
   - assets/style/brand-vars.css
@@ -42,30 +47,39 @@ nav:
   - DingOS:
       - Overview: dingos/Documentation~/index.md
       - Custom Implementations: dingos/Documentation~/custom-implementations.md
-      - Script Reference: dingos/Documentation~/ScriptReference/index.md
+      - Script Reference:
+          - ... | dingos/Documentation~/ScriptReference/**
   - Unity Packages:
       - Overview: packages-unity/README.md
       - Core Art:
           - Overview: packages-unity/Packages/com.tricklecharge.unity.art.core/Documentation~/index.md
-          - Script Reference: packages-unity/Packages/com.tricklecharge.unity.art.core/Documentation~/ScriptReference/index.md
+          - Script Reference:
+              - ... | packages-unity/Packages/com.tricklecharge.unity.art.core/Documentation~/ScriptReference/**
       - Dev Art:
           - Overview: packages-unity/Packages/com.tricklecharge.unity.art.devart/Documentation~/index.md
-          - Script Reference: packages-unity/Packages/com.tricklecharge.unity.art.devart/Documentation~/ScriptReference/index.md
+          - Script Reference:
+              - ... | packages-unity/Packages/com.tricklecharge.unity.art.devart/Documentation~/ScriptReference/**
       - Attributes:
           - Overview: packages-unity/Packages/com.tricklecharge.unity.attributes/Documentation~/index.md
-          - Script Reference: packages-unity/Packages/com.tricklecharge.unity.attributes/Documentation~/ScriptReference/index.md
+          - Script Reference:
+              - ... | packages-unity/Packages/com.tricklecharge.unity.attributes/Documentation~/ScriptReference/**
       - DingOS:
           - Overview: packages-unity/Packages/com.tricklecharge.unity.dingos/Documentation~/index.md
-          - Script Reference: packages-unity/Packages/com.tricklecharge.unity.dingos/Documentation~/ScriptReference/index.md
+          - Script Reference:
+              - ... | packages-unity/Packages/com.tricklecharge.unity.dingos/Documentation~/ScriptReference/**
       - Drone:
           - Overview: packages-unity/Packages/com.tricklecharge.unity.drone/Documentation~/index.md
-          - Script Reference: packages-unity/Packages/com.tricklecharge.unity.drone/Documentation~/ScriptReference/index.md
+          - Script Reference:
+              - ... | packages-unity/Packages/com.tricklecharge.unity.drone/Documentation~/ScriptReference/**
       - Math:
           - Overview: packages-unity/Packages/com.tricklecharge.unity.math/Documentation~/index.md
-          - Script Reference: packages-unity/Packages/com.tricklecharge.unity.math/Documentation~/ScriptReference/index.md
+          - Script Reference:
+              - ... | packages-unity/Packages/com.tricklecharge.unity.math/Documentation~/ScriptReference/**
       - Physics:
           - Overview: packages-unity/Packages/com.tricklecharge.unity.physics/Documentation~/index.md
-          - Script Reference: packages-unity/Packages/com.tricklecharge.unity.physics/Documentation~/ScriptReference/index.md
+          - Script Reference:
+              - ... | packages-unity/Packages/com.tricklecharge.unity.physics/Documentation~/ScriptReference/**
       - Vehicles:
           - Overview: packages-unity/Packages/com.tricklecharge.unity.vehicles/Documentation~/index.md
-          - Script Reference: packages-unity/Packages/com.tricklecharge.unity.vehicles/Documentation~/ScriptReference/index.md
+          - Script Reference:
+              - ... | packages-unity/Packages/com.tricklecharge.unity.vehicles/Documentation~/ScriptReference/**
