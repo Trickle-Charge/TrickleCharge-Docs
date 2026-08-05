@@ -1,0 +1,24 @@
+/* Trickle-Charge/.github/assets/style/brand-vars.css */
+:root {
+    /* Brand Tokens */
+    --tc-accent-color: #33FF00;
+    --tc-accent-hover: #66FF33;
+    --tc-bg-color:     #191919;
+    --tc-bg-light:    #2a2a2a;
+    --tc-bg-dark:     #0f0f0f;
+
+    /* Glow Animation Tokens */
+    --tc-glow-off: drop-shadow(0 0 0px var(--tc-accent-color));
+    --tc-glow-on:  drop-shadow(0 0 6px color-mix(in srgb, var(--tc-accent-hover) 65%, transparent));
+    --tc-glow-transition: color 0.5s ease-out, filter 0.5s ease-out;
+}
+
+/* Reusable Utility Class */
+.tc-glow {
+    filter: var(--tc-glow-off);
+    transition: var(--tc-glow-transition);
+}
+
+.tc-glow:hover {
+    filter: var(--tc-glow-on);
+}

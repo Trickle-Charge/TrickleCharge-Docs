@@ -1,0 +1,21 @@
+{
+  "name": "TrickleCharge.DingOS.Unity.Editor",
+  "rootNamespace": "TrickleCharge.DingOS.Unity.Editor",
+  "references": [
+    "GUID:ded077317b04b39448de3cc80957d3c6"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "TrickleCharge.DingOS.dll",
+    "System.CommandLine.dll"
+  ],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

@@ -1,0 +1,16 @@
+{
+  "name": "TrickleCharge.Attributes.Editor",
+  "rootNamespace": "TrickleCharge.Attributes.Editor",
+  "references": ["GUID:e39fe7a1af57db041adfaaa0381dff20"],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

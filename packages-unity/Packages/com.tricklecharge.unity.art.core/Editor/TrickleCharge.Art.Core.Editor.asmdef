@@ -1,0 +1,16 @@
+{
+  "name": "TrickleCharge.Art.Core.Editor",
+  "rootNamespace": "TrickleCharge.Art.Core.Editor",
+  "references": [],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

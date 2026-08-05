@@ -1,0 +1,29 @@
+{
+  "name": "com.tricklecharge.unity.drone",
+  "displayName": "TrickleCharge Drones",
+  "description": "Drone systems",
+  "version": "0.0.2",
+  "unity": "6000.3",
+  "unityRelease": "10f1",
+  "keywords": [
+    "tricklecharge",
+    "drone",
+    "flight"
+  ],
+  "author": {
+    "name": "Jack Cooper",
+    "email": "jack.cooper7776@gmail.com",
+    "url": "https://github.com/pog7776"
+  },
+  "homepage": "https://github.com/Trickle-Charge",
+  "publishConfig": {
+    "registry": "https://npm.tricklecharge.dev/"
+  },
+  "dependencies": {
+    "com.unity.inputsystem": "1.18.0",
+    "com.tricklecharge.unity.attributes": "0.0.1",
+    "com.tricklecharge.unity.math": "0.0.1",
+    "com.tricklecharge.unity.physics": "0.0.1",
+    "com.tricklecharge.unity.vehicles": "0.0.1"
+  }
+}

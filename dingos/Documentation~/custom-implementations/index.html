@@ -1,0 +1,1849 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Centralized documentation portal for TrickleCharge packages and infrastructure.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.tricklecharge.dev/dingos/Documentation~/custom-implementations/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../ScriptReference/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Custom Implementations - TrickleCharge Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/style/brand-vars.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#custom-engine-implementation-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="TrickleCharge Documentation" class="md-header__button md-logo" aria-label="TrickleCharge Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/branding/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TrickleCharge Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Custom Implementations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="TrickleCharge Documentation" class="md-nav__button md-logo" aria-label="TrickleCharge Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/branding/logo.svg" alt="logo">
+
+    </a>
+    TrickleCharge Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../infra/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Infrastructure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../infra/registry/verdaccio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Registry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../infra/cicd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD Pipelines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DingOS
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DingOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Implementations
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Implementations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-iterminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing ITerminal
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing ITerminal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-implementation-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Implementation Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-terminal-example-unity-gui-buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Terminal Example (Unity / GUI Buffer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-ishell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing IShell
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing IShell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-contract_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-implementation-guidelines_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Implementation Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-ishellcontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing IShellContext
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing IShellContext">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-contract_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-implementation-guidelines_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Implementation Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-ishellcontextstack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing IShellContextStack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing IShellContextStack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-contract_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-implementation-guidelines_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Implementation Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-iterminalhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing ITerminalHost
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing ITerminalHost">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-contract_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-flow-rules-for-executeasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution Flow Rules for ExecuteAsync
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-custom-command-modules-icommandmodulet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing Custom Command Modules (ICommandModule&lt;T&gt;)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing Custom Command Modules (ICommandModule&lt;T&gt;)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-contract_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ishellenvironment-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IShellEnvironment Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-implementation-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Implementation Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../ScriptReference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Script Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Script Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../packages-unity/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unity Packages
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unity Packages
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../packages-unity/Packages/com.tricklecharge.unity.art.core/Documentation~/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Art
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Art
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../packages-unity/Packages/com.tricklecharge.unity.art.core/Documentation~/Screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screen Shaders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../packages-unity/Packages/com.tricklecharge.unity.attributes/Documentation~/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attributes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Attributes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../packages-unity/Packages/com.tricklecharge.unity.attributes/Documentation~/ScriptReference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ScriptReference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ScriptReference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-iterminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing ITerminal
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing ITerminal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-implementation-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Implementation Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-terminal-example-unity-gui-buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Terminal Example (Unity / GUI Buffer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-ishell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing IShell
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing IShell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-contract_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-implementation-guidelines_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Implementation Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-ishellcontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing IShellContext
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing IShellContext">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-contract_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-implementation-guidelines_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Implementation Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-ishellcontextstack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing IShellContextStack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing IShellContextStack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-contract_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-implementation-guidelines_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Implementation Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-iterminalhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing ITerminalHost
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing ITerminalHost">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-contract_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-flow-rules-for-executeasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution Flow Rules for ExecuteAsync
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-custom-command-modules-icommandmodulet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing Custom Command Modules (ICommandModule&lt;T&gt;)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing Custom Command Modules (ICommandModule&lt;T&gt;)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-contract_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ishellenvironment-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IShellEnvironment Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-implementation-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Implementation Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="custom-engine-implementation-guide">Custom Engine Implementation Guide</h1>
+<p>This guide details how to implement custom versions of the core <code>DingOS</code> interfaces defined in <code>Runtime/Core/</code>.</p>
+<p>Whether you are building a custom UI backend (e.g., Unity UI Toolkit, ImGui, WebSocket bridge), writing a custom execution engine, or managing custom state scopes, this reference outlines the contract rules and behavioral expectations for each component.</p>
+<hr />
+<h2 id="architecture-overview">Architecture Overview</h2>
+<p><code>DingOS</code> uses a decoupled pipe-and-filter architecture:</p>
+<details>
+<summary>Click to view ASCII Diagram</summary>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ Device / Display ]
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        ^
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        | (Raw Keys / Screen Output)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        v
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  +-----------+
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  | ITerminal | &lt;===================================+
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  +-----+-----+                                     |
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        |                                           |
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        | (Input Lines / Events)                    |
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        v                                           |
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a> +--------------+   Manages   +--------------------+|
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a> | ITerminalHost| ----------&gt; | IShellContextStack ||
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a> +--------------+             +---------+----------+|
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                                        |           |
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>                                        v (Active)  |
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                              +--------------------+|
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                              |   IShellContext    ||
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                              +---------+----------+|
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                                        |           |
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>                                        v           |
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>                              +--------------------+|
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>                              |       IShell       ||
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>                              +---------+----------+|
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>                                        |           |
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>                                        v (Executes)|
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>                              +--------------------+|
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>                              | ICommandModule&lt;T&gt;  ||
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>                              +---------+----------+|
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>                                        |           |
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>                                        +-----------+
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>                                    (StdOut / StdErr)
+</code></pre></div>
+
+</details>
+
+<pre class="mermaid"><code>graph TD
+  Device[Device / Display] &lt;--&gt;|Raw Input / Screen Output| Terminal[ITerminal]
+
+  subgraph Engine Core
+    Terminal &lt;--&gt;|Input Lines / Events| Host[ITerminalHost]
+    Host --&gt;|Manages| Stack[IShellContextStack]
+    Stack --&gt;|Active Context| Context[IShellContext]
+    Context --&gt;|Delegates to| Shell[IShell]
+    Shell --&gt;|Executes| Modules["ICommandModule&amp;lt;T&amp;gt;"]
+    Modules -.-&gt;|Writes StdOut / StdErr| Terminal
+  end</code></pre>
+<hr />
+<h2 id="implementing-iterminal">Implementing <code>ITerminal</code></h2>
+<p><code>ITerminal</code> defines low-level string I/O and screen clearing mechanics. Implement this interface to pipe output into UI text elements, network sockets, or custom logs.</p>
+<h3 id="interface-contract">Interface Contract</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">TrickleCharge.DingOS.Core</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">ITerminal</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">Write</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">);</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">WriteLine</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">);</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">WriteError</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">);</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">WriteErrorLine</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">);</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="nf">ReadLine</span><span class="p">();</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">Clear</span><span class="p">();</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="key-implementation-guidelines">Key Implementation Guidelines</h3>
+<ul>
+<li><strong>Stream Separation:</strong> Keep standard output (<code>Write</code>/<code>WriteLine</code>) distinct from error output (<code>WriteError</code>/<code>WriteErrorLine</code>). In custom UI components, error calls should apply visual cues (such as red text tags or routing to a separate error log).</li>
+<li><strong>Push vs. Pull Model for <code>ReadLine()</code>:</strong></li>
+<li><strong>Pull Model (CLI/Console):</strong> <code>ReadLine()</code> should block execution until a full line of text is submitted.</li>
+<li><strong>Push Model (Unity/UI/Web):</strong> In non-blocking event-driven environments, <code>ReadLine()</code> is not invoked by <code>ExecuteAsync</code>. You can safely throw <code>NotSupportedException</code> or return <code>string.Empty</code>.</li>
+<li><strong>Viewport Reset (<code>Clear()</code>):</strong> Must reset or flush the target UI text buffer immediately.</li>
+</ul>
+<h3 id="custom-terminal-example-unity-gui-buffer">Custom Terminal Example (Unity / GUI Buffer)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Text</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">using</span><span class="w"> </span><span class="nn">TrickleCharge.DingOS.Core</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UIBufferTerminal</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ITerminal</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">{</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">StringBuilder</span><span class="w"> </span><span class="n">_displayBuffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Text</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_displayBuffer</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">?</span><span class="w"> </span><span class="n">BufferUpdated</span><span class="p">;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Write</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="n">_displayBuffer</span><span class="p">.</span><span class="n">Append</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="n">BufferUpdated</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">();</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">WriteLine</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="n">_displayBuffer</span><span class="p">.</span><span class="n">AppendLine</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">        </span><span class="n">BufferUpdated</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">();</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">WriteError</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">        </span><span class="n">_displayBuffer</span><span class="p">.</span><span class="n">Append</span><span class="p">(</span><span class="s">$&quot;&lt;color=red&gt;{text}&lt;/color&gt;&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">        </span><span class="n">BufferUpdated</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">();</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">WriteErrorLine</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">        </span><span class="n">_displayBuffer</span><span class="p">.</span><span class="n">AppendLine</span><span class="p">(</span><span class="s">$&quot;&lt;color=red&gt;{text}&lt;/color&gt;&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">        </span><span class="n">BufferUpdated</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">();</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">ReadLine</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NotSupportedException</span><span class="p">(</span><span class="s">&quot;Push-based terminals do not support blocking ReadLine calls.&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Clear</span><span class="p">()</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">        </span><span class="n">_displayBuffer</span><span class="p">.</span><span class="n">Clear</span><span class="p">();</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">        </span><span class="n">BufferUpdated</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">();</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="implementing-ishell">Implementing <code>IShell</code></h2>
+<p><code>IShell</code> is responsible for receiving raw command strings, parsing arguments, invoking execution logic, 
+and emitting control signals.</p>
+<blockquote>
+<p><strong>Note:</strong> <code>DingOS</code> includes <code>CommandShell</code> out of the box (built on <code>System.CommandLine</code>). 
+You only need to implement <code>IShell</code> if you are replacing <code>CommandShell</code> with an alternative 
+command execution engine or scripting language (e.g., Lua).</p>
+</blockquote>
+<h3 id="interface-contract_1">Interface Contract</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">TrickleCharge.DingOS.Core</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IShell</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">?</span><span class="w"> </span><span class="n">ClearRequested</span><span class="p">;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">?</span><span class="w"> </span><span class="n">QuitRequested</span><span class="p">;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">ShellResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ExecuteAsync</span><span class="p">(</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">commandLine</span><span class="p">,</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">            </span><span class="n">TextWriter</span><span class="o">?</span><span class="w"> </span><span class="n">outputWriter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">            </span><span class="n">TextWriter</span><span class="o">?</span><span class="w"> </span><span class="n">errorWriter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">            </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">);</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="key-implementation-guidelines_1">Key Implementation Guidelines</h3>
+<ul>
+<li><strong>Output Scope Routing:</strong> Send standard output to <code>outputWriter</code> and errors to <code>errorWriter</code>.</li>
+<li><strong>Engine Control Signals:</strong> Raise <code>ClearRequested</code> when execution requires a terminal clear, and <code>QuitRequested</code> 
+when execution requires exiting or popping the context stack.</li>
+<li><strong>Return Conventions:</strong> Always return a valid <code>ShellResult</code>. Empty or whitespace input should return <code>ShellResult.Empty</code>.</li>
+</ul>
+<hr />
+<h2 id="implementing-ishellcontext">Implementing <code>IShellContext</code></h2>
+<p><code>IShellContext</code> represents an active modal execution scope on the context stack. It couples a named environment prompt to an underlying <code>IShell</code> execution engine.</p>
+<h3 id="interface-contract_2">Interface Contract</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">TrickleCharge.DingOS.Core</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IShellContext</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">Prompt</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="n">IShell</span><span class="w"> </span><span class="n">Shell</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">?</span><span class="w"> </span><span class="n">ClearRequested</span><span class="p">;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="o">?</span><span class="w"> </span><span class="n">QuitRequested</span><span class="p">;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">ShellResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ProcessInputAsync</span><span class="p">(</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">input</span><span class="p">,</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">            </span><span class="n">TextWriter</span><span class="o">?</span><span class="w"> </span><span class="n">outputWriter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">            </span><span class="n">TextWriter</span><span class="o">?</span><span class="w"> </span><span class="n">errorWriter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">            </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">);</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">Activate</span><span class="p">(</span><span class="n">ITerminal</span><span class="w"> </span><span class="n">terminal</span><span class="p">);</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">Deactivate</span><span class="p">(</span><span class="n">ITerminal</span><span class="w"> </span><span class="n">terminal</span><span class="p">);</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="key-implementation-guidelines_2">Key Implementation Guidelines</h3>
+<ul>
+<li><strong>Event Forwarding:</strong> A context must subscribe to its inner <code>Shell.ClearRequested</code> and <code>Shell.QuitRequested</code> events and re-emit them so the parent stack context manager can handle them.</li>
+<li><strong>Lifecycle Hooks:</strong> <code>Activate()</code> and <code>Deactivate()</code> are invoked by the <code>IShellContextStack</code> implementation when pushing or popping contexts. Use them to print banners, bind UI events, or initialize sub-shell state.</li>
+<li><strong>Resource Cleanup:</strong> If your context or shell registers event handlers or holds unmanaged resources, implement <code>IDisposable</code>.</li>
+</ul>
+<hr />
+<h2 id="implementing-ishellcontextstack">Implementing <code>IShellContextStack</code></h2>
+<p><code>IShellContextStack</code> manages the lifetime and navigation hierarchy of <code>IShellContext</code> instances (e.g., entering sub-shells, SSH sessions, or modal prompts).</p>
+<h3 id="interface-contract_3">Interface Contract</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">TrickleCharge.DingOS.Core</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IShellContextStack</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="n">IShellContext</span><span class="o">?</span><span class="w"> </span><span class="n">CurrentContext</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">ActivePrompt</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">PushContext</span><span class="p">(</span><span class="n">IShellContext</span><span class="w"> </span><span class="n">context</span><span class="p">);</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">PopContext</span><span class="p">();</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="key-implementation-guidelines_3">Key Implementation Guidelines</h3>
+<ol>
+<li><strong>Stack Transitions:</strong></li>
+<li>When <code>PushContext</code> is called:<ol>
+<li>Unbind events from the previous <code>CurrentContext</code>.</li>
+<li>Call <code>Deactivate(_terminal)</code> on the previous context.</li>
+<li>Push the new context onto the stack.</li>
+<li>Bind clear/quit events on the new context.</li>
+<li>Call <code>Activate(_terminal)</code> on the new context.</li>
+</ol>
+</li>
+<li><strong>Auto-Popping on Quit:</strong> Hook into <code>QuitRequested</code> on the top context. When fired, automatically invoke <code>PopContext()</code>.</li>
+<li><strong>Resource Disposal on Pop:</strong> When popping a context from the stack, check if poppedContext is IDisposable disposable 
+and invoke Dispose() prior to activating the underlying context.</li>
+<li><strong>Screen Clearing on Clear:</strong> Hook into <code>ClearRequested</code> on the top context. When fired, trigger <code>ITerminal.Clear()</code>.</li>
+<li><strong>Fallback Prompts:</strong> Ensure <code>ActivePrompt</code> falls back to a clean default (e.g., <code>"&gt; "</code>) if the stack is completely empty.</li>
+</ol>
+<hr />
+<h2 id="implementing-iterminalhost">Implementing <code>ITerminalHost</code></h2>
+<p><code>ITerminalHost</code> bridges <code>ITerminal</code> and <code>IShellContextStack</code> together. It acts as the primary API endpoint for both CLI pull loops and event-driven push architectures.</p>
+<h3 id="interface-contract_4">Interface Contract</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">TrickleCharge.DingOS.Core</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">ITerminalHost</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="n">IShellContextStack</span><span class="w"> </span><span class="n">ContextStack</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="n">Task</span><span class="w"> </span><span class="nf">RunConsoleLoopAsync</span><span class="p">(</span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">);</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">        </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">ShellResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ExecuteAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">);</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="execution-flow-rules-for-executeasync">Execution Flow Rules for <code>ExecuteAsync</code></h3>
+<p>When implementing <code>ExecuteAsync(string input, CancellationToken cancellationToken)</code>:</p>
+<ol>
+<li><strong>Empty Stack Guard:</strong> Check if <code>ContextStack.CurrentContext</code> is <code>null</code>. If so, immediately return <code>ShellResult.Empty</code>.</li>
+<li><strong>Stream Bridging:</strong> Wrap <code>ITerminal</code> standard output and error delegates in <code>TextWriter</code> instances 
+(e.g., <code>TerminalTextWriter</code>) so terminal writes flow cleanly into <code>ProcessInputAsync(...)</code>.</li>
+<li><strong>Delegate Processing:</strong> Forward the input line to <code>ContextStack.CurrentContext.ProcessInputAsync(...)</code>.</li>
+</ol>
+<hr />
+<h2 id="writing-custom-command-modules-icommandmodulet">Writing Custom Command Modules (<code>ICommandModule&lt;T&gt;</code>)</h2>
+<p>Command modules define grouped commands. Modules implement <code>ICommandModule&lt;TCommand&gt;</code>, where <code>TCommand</code> corresponds to 
+your shell's command definition type (e.g., <code>System.CommandLine.Command</code>).</p>
+<h3 id="interface-contract_5">Interface Contract</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">TrickleCharge.DingOS.Core</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">ICommandModule</span><span class="o">&lt;</span><span class="k">out</span><span class="w"> </span><span class="n">TCommand</span><span class="o">&gt;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">TCommand</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetCommands</span><span class="p">(</span><span class="n">IShellEnvironment</span><span class="w"> </span><span class="n">environment</span><span class="p">);</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="ishellenvironment-rules"><code>IShellEnvironment</code> Rules</h3>
+<p>Commands must <strong>never</strong> write directly to standard <code>Console.Out</code> or <code>Console.Error</code>. Instead, use the <code>IShellEnvironment</code> instance passed to <code>GetCommands()</code>:</p>
+<ul>
+<li><strong>Output:</strong> Route standard messages through <code>environment.Out</code>.</li>
+<li><strong>Errors:</strong> Route errors through <code>environment.Error</code>.</li>
+<li><strong>State Operations:</strong> Invoke <code>environment.RequestClear()</code> or <code>environment.RequestQuit()</code> to request terminal resets or exit shell contexts.</li>
+</ul>
+<h3 id="module-implementation-example">Module Implementation Example</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.CommandLine</span><span class="p">;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">using</span><span class="w"> </span><span class="nn">TrickleCharge.DingOS.Core</span><span class="p">;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">DiagnosticsModule</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICommandModule</span><span class="o">&lt;</span><span class="n">Command</span><span class="o">&gt;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">{</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">Command</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetCommands</span><span class="p">(</span><span class="n">IShellEnvironment</span><span class="w"> </span><span class="n">environment</span><span class="p">)</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">        </span><span class="k">yield</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nf">SysInfo</span><span class="p">(</span><span class="n">environment</span><span class="p">);</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Command</span><span class="w"> </span><span class="nf">SysInfo</span><span class="p">(</span><span class="n">IShellEnvironment</span><span class="w"> </span><span class="n">environment</span><span class="p">)</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">        </span><span class="n">Command</span><span class="w"> </span><span class="n">sysInfoCmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="s">&quot;sysinfo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Displays system information.&quot;</span><span class="p">);</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">        </span><span class="n">sysInfoCmd</span><span class="p">.</span><span class="n">Aliases</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;ver&quot;</span><span class="p">);</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">        </span><span class="n">sysInfoCmd</span><span class="p">.</span><span class="n">SetAction</span><span class="p">(</span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">environment</span><span class="p">.</span><span class="n">Out</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">SystemInfo</span><span class="p">.</span><span class="n">VersionString</span><span class="p">));</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">sysInfoCmd</span><span class="p">;</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="p">}</span>
+</code></pre></div>
+<p><code>GetCommands()</code> returns an <code>IEnumerable</code> of the given command type.</p>
+<p>This means a module can return multiple commands by yielding each in sequence.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CoreShellModule</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICommandModule</span><span class="o">&lt;</span><span class="n">Command</span><span class="o">&gt;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="c1">// ...</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">Command</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetCommands</span><span class="p">(</span><span class="n">IShellEnvironment</span><span class="w"> </span><span class="n">environment</span><span class="p">)</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">        </span><span class="k">yield</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nf">Exit</span><span class="p">(</span><span class="n">environment</span><span class="p">);</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span><span class="k">yield</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nf">Clear</span><span class="p">(</span><span class="n">environment</span><span class="p">);</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">        </span><span class="k">yield</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nf">Help</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span><span class="w"> </span><span class="n">_shell</span><span class="p">);</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="c1">// ...</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>See: <code>TrickleCharge.DingOS.Modules.CoreShellModule</code></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.indexes", "navigation.sections", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
