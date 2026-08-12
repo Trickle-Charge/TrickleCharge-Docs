@@ -1,0 +1,21 @@
+{
+  "name": "com.tricklecharge.unity.{DevpackName}",
+  "displayName": "{DevpackName}",
+  "description": "{DevpackDescription}",
+  "version": "0.0.1",
+  "unity": "6000.3",
+  "unityRelease": "10f1",
+  "keywords": [
+    "tricklecharge"
+  ],
+  "author": {
+    "name": "Jack Cooper",
+    "email": "jack.cooper7776@gmail.com",
+    "url": "https://github.com/pog7776"
+  },
+  "homepage": "https://github.com/Trickle-Charge",
+  "publishConfig": {
+    "registry": "https://npm.tricklecharge.dev/"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,16 @@
+{
+  "name": "TrickleCharge.DingOS",
+  "rootNamespace": "TrickleCharge.DingOS",
+  "references": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "System.CommandLine.dll"
+  ],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": true
+}

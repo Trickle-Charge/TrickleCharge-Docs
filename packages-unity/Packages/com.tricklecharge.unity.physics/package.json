@@ -1,0 +1,23 @@
+{
+  "name": "com.tricklecharge.unity.physics",
+  "displayName": "TrickleCharge Physics",
+  "description": "Basic Physics",
+  "version": "0.0.2",
+  "unity": "6000.3",
+  "unityRelease": "10f1",
+  "keywords": [
+    "tricklecharge",
+    "physics",
+    "pid"
+  ],
+  "author": {
+    "name": "Jack Cooper",
+    "email": "jack.cooper7776@gmail.com",
+    "url": "https://github.com/pog7776"
+  },
+  "homepage": "https://github.com/Trickle-Charge",
+  "publishConfig": {
+    "registry": "https://npm.tricklecharge.dev/"
+  },
+  "dependencies": {}
+}

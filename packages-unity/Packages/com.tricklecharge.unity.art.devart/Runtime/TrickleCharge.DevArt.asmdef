@@ -1,0 +1,14 @@
+{
+  "name": "TrickleCharge.DevArt",
+  "rootNamespace": "TrickleCharge.DevArt",
+  "references": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

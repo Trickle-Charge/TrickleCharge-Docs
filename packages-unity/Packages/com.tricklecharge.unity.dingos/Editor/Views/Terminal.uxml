@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.tricklecharge.unity.dingos/Editor/Views/Terminal.uss?fileID=7433441132597879392&amp;guid=9deb78f134d246c481b2f5a3f6a53d06&amp;type=3#Terminal"/>
+    <ui:ScrollView name="terminal-scroll">
+        <ui:Label name="terminal-output" selectable="true" focusable="true" style="margin-left: 5px; margin-right: 5px;"/>
+    </ui:ScrollView>
+    <ui:TextField name="terminal-input"/>
+</ui:UXML>
