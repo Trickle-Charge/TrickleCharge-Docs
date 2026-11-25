@@ -1,0 +1,22 @@
+{
+  "name": "com.tricklecharge.unity.math",
+  "displayName": "TrickleCharge Math",
+  "description": "Math tools devpack",
+  "version": "0.0.3",
+  "unity": "6000.3",
+  "unityRelease": "10f1",
+  "keywords": [
+    "tricklecharge",
+    "math"
+  ],
+  "author": {
+    "name": "Jack Cooper",
+    "email": "jack.cooper7776@gmail.com",
+    "url": "https://github.com/pog7776"
+  },
+  "homepage": "https://github.com/Trickle-Charge",
+  "publishConfig": {
+    "registry": "https://npm.tricklecharge.dev/"
+  },
+  "dependencies": { }
+}

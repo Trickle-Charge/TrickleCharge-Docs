@@ -1,0 +1,32 @@
+:root {
+    background-color: rgb(25, 25, 25);
+    -unity-font-definition: resource("FlatSkin/Font/Roboto-Regular");
+}
+
+#terminal-scroll {
+    flex-grow: 1;
+    font-size: 16px;
+}
+
+#terminal-scroll .unity-scroll-view__content-container {
+    flex-grow: 1;
+    min-height: 100%;
+}
+
+#terminal-output {
+    color: rgb(51, 255, 0);
+    flex-grow: 1;
+    min-height: 100%;
+}
+
+#terminal-input {
+    /*background-color: rgb(25, 25, 25);*/
+    /*color: rgb(51, 255, 0);*/
+}
+
+#terminal-input .unity-base-text-field__input {
+    background-color: transparent;
+    /*border-width: 0;*/
+    /*padding: 0;*/
+    color: rgb(51, 255, 0);
+}

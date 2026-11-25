@@ -1,0 +1,20 @@
+{
+    "name": "TrickleCharge.Drone",
+    "rootNamespace": "TrickleCharge.Drone",
+    "references": [
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:e39fe7a1af57db041adfaaa0381dff20",
+        "GUID:5d5c551b6bb8e924f95b0de31738e335",
+        "GUID:9dac83fa84033e14685b45c64d322c59",
+        "GUID:eebfca1406e81c04fa6003ca4e613079"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

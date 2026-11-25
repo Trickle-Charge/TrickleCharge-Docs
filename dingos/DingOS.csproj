@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <RootNamespace>TrickleCharge.DingOS</RootNamespace>
+        <AssemblyName>TrickleCharge.DingOS</AssemblyName>
+        <Nullable>enable</Nullable>
+        <LangVersion>9</LangVersion>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="System.CommandLine" Version="2.0.10" />
+    </ItemGroup>
+
+    <!-- Automatically copy System.CommandLine.dll to Plugins/ for Unity -->
+    <Target Name="CopyDependenciesToPlugins" AfterTargets="Build">
+        <ItemGroup>
+            <PluginFiles Include="$(TargetDir)System.CommandLine.dll" />
+        </ItemGroup>
+        <Copy SourceFiles="@(PluginFiles)" DestinationFolder="$(ProjectDir)Plugins" SkipUnchangedFiles="true" />
+    </Target>
+</Project>

@@ -1,0 +1,22 @@
+{
+  "name": "com.tricklecharge.unity.vehicles",
+  "displayName": "TrickleCharge Vehicle Systems",
+  "description": "Basic vehicle systems",
+  "version": "0.0.1",
+  "unity": "6000.3",
+  "unityRelease": "10f1",
+  "keywords": [
+    "tricklecharge",
+    "vehicles"
+  ],
+  "author": {
+    "name": "Jack Cooper",
+    "email": "jack.cooper7776@gmail.com",
+    "url": "https://github.com/pog7776"
+  },
+  "homepage": "https://github.com/Trickle-Charge",
+  "publishConfig": {
+    "registry": "https://npm.tricklecharge.dev/"
+  },
+  "dependencies": {}
+}

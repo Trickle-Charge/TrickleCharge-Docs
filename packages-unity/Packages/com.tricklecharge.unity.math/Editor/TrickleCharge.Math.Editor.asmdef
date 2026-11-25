@@ -1,0 +1,16 @@
+{
+  "name": "TrickleCharge.Math.Editor",
+  "rootNamespace": "TrickleCharge.Math.Editor",
+  "references": ["GUID:5d5c551b6bb8e924f95b0de31738e335"],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
